@@ -24,6 +24,7 @@ class CicdApplicationTests {
 	@DisplayName("/healthz 테스트")
 	fun testHomeContollerHealthz() {
 		val response: ResponseEntity<String> = template.getForEntity("/healthz", String::class.java)
+
 		// 성공하는 경우
 		assertThat(response.body).isEqualTo("healthz-aws")
 	}
